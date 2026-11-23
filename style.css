@@ -1,0 +1,156 @@
+/* Sistem Pengadaan Obat Klinik - tampilan */
+
+:root {
+  --utama: #0f766e;
+  --utama-tua: #115e59;
+  --utama-muda: #e6f4f1;
+  --teks: #1f2937;
+  --abu: #6b7280;
+  --garis: #e5e7eb;
+  --latar: #f3f6f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--latar);
+  color: var(--teks);
+  line-height: 1.5;
+}
+
+/* ---------- navbar ---------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--utama);
+  color: #fff;
+  border-bottom: 4px solid var(--utama-tua);
+}
+nav strong { font-size: 18px; letter-spacing: .3px; }
+nav .menu a {
+  color: #cfeae6;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+nav .menu a:hover { background: rgba(255,255,255,.12); color: #fff; }
+nav .menu a.on { background: #fff; color: var(--utama); font-weight: 600; }
+
+/* ---------- isi halaman ---------- */
+main { max-width: 920px; margin: 0 auto; padding: 24px 16px 40px; }
+h2 { margin: 0 0 2px; font-size: 22px; color: var(--utama-tua); }
+h3 { margin: 0 0 10px; font-size: 16px; }
+.muted { color: var(--abu); margin-top: 0; font-size: 14px; }
+
+.kartu {
+  background: #fff;
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, .06);
+}
+
+/* ---------- kartu ringkasan ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+.grid .kartu { margin: 0; border-left: 4px solid var(--utama); }
+.stat { color: var(--abu); font-size: 13px; }
+.stat span { display: block; font-size: 26px; font-weight: 700; color: var(--utama); }
+
+/* ---------- form ---------- */
+label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 5px; color: #374151; }
+label:first-child { margin-top: 0; }
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fafafa;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--utama);
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--utama-muda);
+}
+button {
+  margin-top: 18px;
+  padding: 10px 22px;
+  background: var(--utama);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: var(--utama-tua); }
+.batal { margin-left: 14px; font-size: 14px; color: var(--abu); }
+
+/* ---------- tabel ---------- */
+.tabel { overflow-x: auto; padding: 8px 20px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--utama-tua);
+  border-bottom: 2px solid var(--utama-muda);
+}
+td { padding: 12px 10px; border-bottom: 1px solid #f0f2f3; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+tr:hover td { background: #f8fbfb; }
+
+.aksi a {
+  margin-right: 8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--utama);
+  background: var(--utama-muda);
+}
+.aksi a.merah { color: #b91c1c; background: #fee2e2; }
+
+.alert {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+/* ---------- login ---------- */
+body.login {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: linear-gradient(160deg, #d9efeb 0%, var(--latar) 60%);
+}
+.login-box { width: 100%; max-width: 350px; padding: 28px 24px; border-top: 5px solid var(--utama); }
+.login-box h1 { margin: 0; font-size: 22px; color: var(--utama-tua); }
+.login-box .muted { margin-bottom: 18px; }
+.login-box button { width: 100%; }
+
+/* ---------- footer ---------- */
+footer { text-align: center; font-size: 12px; color: var(--abu); padding: 0 0 24px; }
